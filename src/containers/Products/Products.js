@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import axios from 'axios'
+import axios from '../../axios'
+import Header from '../../components/Header/Header';
 
 class Products extends Component {
     constructor(props){
@@ -9,17 +10,22 @@ class Products extends Component {
             selectedPlanID: null,
         }
     }
-
+    
     componentDidMount() {
-        axios.get('​https://7ac2b8ab-f3e5-4534-863d-90dd424a6405.mock.pstmn.io/prices')
+        axios.get('/prices')
             .then( response => {
                 console.log(response.data)
+            })
+            .catch(error => {
+
             })
     }
 
     render() {
         return(
-            <div></div>
+            <div>
+                <Header/>
+            </div>
         )
     }
 }

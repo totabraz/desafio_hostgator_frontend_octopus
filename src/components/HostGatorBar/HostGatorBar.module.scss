@@ -1,0 +1,21 @@
+@import '../../assets/shared_sass/colors_and_constants.scss';
+@import '../../assets/shared_sass/gird.scss';
+
+.HostGatorBar{
+    background-color: $white;
+    display: inline-block;  
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 99;
+    figure{
+        height: 50px;
+        float: left;
+        margin: 0;
+        padding: 10px 0;
+        box-sizing: border-box;
+        img{
+            height: 100%; 
+            width: auto;
+        }
+    }
+}

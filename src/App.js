@@ -1,12 +1,13 @@
 import React from 'react';
-import logo from './assets/imgs/hostgator-logo.svg';
+// import logo from './logo.svg';
 import './App.scss';
-import Products from './containers/Products/Products';
+import Product from './containers/Products/Products';
+import HostGatorBar from './components/HostGatorBar/HostGatorBar';
 
 function App() {
   return (
     <div className="App">
-      {/* <section >
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -19,8 +20,10 @@ function App() {
         >
           Learn React
         </a>
-      </section> */}
-        <Products/>
+      </header> */}
+
+      <HostGatorBar/>
+      <Product/>
     </div>
   );
 }
