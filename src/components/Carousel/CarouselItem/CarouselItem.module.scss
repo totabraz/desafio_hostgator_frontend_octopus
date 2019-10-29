@@ -1,0 +1,35 @@
+@import '../../../assets//shared_sass/colors_and_constants.scss';
+@import '../../../assets/shared_sass/gird.scss';
+
+
+.CarouselItem+.CarouselItem {
+    margin-left: 15px;
+}
+
+.CarouselItem {
+    display: inline-block;
+    width: 329px;
+    background: #FFFFFF 0% 0%;
+    border-radius: 5px;
+    border: 1px solid $bluel;
+    opacity: 1;
+
+    .InfoArea {
+        text-align: left;
+    }
+
+    .OldValue {
+        text-decoration: line-through;
+    }
+
+    header,
+    section {
+        text-align: center;
+        padding: 25px;
+    }
+
+    header+section,
+    section+section {
+        border-top: 1px solid $bluel;
+    }
+}

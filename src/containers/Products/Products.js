@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from '../../axios'
 import Header from '../../components/Header/Header';
 import PeriodSelector from '../../components/PeriodSelector/PeriodSelector';
+import Carousel from '../../components/Carousel/Carousel';
 
 class Products extends Component {
     constructor(props){
@@ -15,7 +16,6 @@ class Products extends Component {
     
     selectedPeriodHandler = (activePeriod) => {
         this.setState({activePeriod : activePeriod})
-        console.log(this.state.activePeriod)
     } 
 
     componentDidMount() {
@@ -25,7 +25,6 @@ class Products extends Component {
                     return response.data.shared.products[planID]
                 })
                 this.setState({plans: plans})
-                console.log(this.state.plans)
             })
             .catch(error => {
 
@@ -39,6 +38,9 @@ class Products extends Component {
                 <PeriodSelector 
                     activePeriod={this.state.activePeriod}
                     setPeriod={this.selectedPeriodHandler}/>
+                <Carousel 
+                    activePeriod={this.state.activePeriod}
+                    plans={this.state.plans}/>
             </div>
         )
     }

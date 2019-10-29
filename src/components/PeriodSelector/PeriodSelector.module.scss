@@ -5,6 +5,7 @@
     margin: 0 auto;
     text-align: center;
     color: $blued;
+    margin-bottom: 60px;
 
     p {
         display: inline-block;
@@ -32,17 +33,22 @@
             display: inline-block;
             padding: 0;
 
-            &:nth-of-type(n + 2){
+            &:hover {
+                background: $bluelTrans;
+            }
+
+            &:nth-of-type(n + 2) {
                 margin-left: 4px;
             }
-            
+
             &.Active {
                 background-color: $bluen;
                 color: $white;
                 font-weight: bold;
+                cursor: default;
             }
         }
-        
+
         img {
             margin-right: 5px;
             vertical-align: middle;
@@ -53,6 +59,5 @@
             line-height: 41px;
             vertical-align: middle;
         }
-
     }
 }

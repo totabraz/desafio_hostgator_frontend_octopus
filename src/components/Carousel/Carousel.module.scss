@@ -1,0 +1,12 @@
+@import '../../assets//shared_sass/colors_and_constants.scss';
+@import '../../assets/shared_sass/gird.scss';
+
+.Carousel{
+    display: block;
+    margin-bottom: 30px;
+
+    .CardsArea{
+        width: 1030px;
+        margin-bottom: 15px;
+    }
+}
