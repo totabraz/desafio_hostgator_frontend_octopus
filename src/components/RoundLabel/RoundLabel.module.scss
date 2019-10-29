@@ -13,40 +13,26 @@
     display: inline-block;
     box-sizing: border-box;
 
-    &:hover {
-        cursor: pointer;
-    }
-
     &.Green {
         background: $green;
-
-        &:hover {
-            background: darken($green, 10);
-        }
     }
 
     &.Orange {
         background: $orange;
-
-        &:hover {
-            background: darken($orange, 10);
-        }
     }
 
     &.Blue {
         background: $bluen;
-
-        &:hover {
-            background: darken($bluen, 10);
-        }
     }
 
     &.Full {
         width: 100%;
     }
+
     &.LeftSide {
         margin-right: 5px;
     }
+
     &.RightSide {
         margin-left: 5px;
     }

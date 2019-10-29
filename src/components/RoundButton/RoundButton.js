@@ -5,7 +5,7 @@ const RoundButton = (props) => {
     let classType = classes.RoundButton + " ";
     if (props.full) {  classType += classes.Full + " "}
     
-    switch(props.type) {
+    switch(props.color) {
         case "green":
             classType += classes.Green
             break;
@@ -20,7 +20,9 @@ const RoundButton = (props) => {
             break;
     }
     return(
-        <a href={props.link} alt={props.alt} title={props.title} className={classType}>
+        <a href={(props.link)? props.link : "#"} alt={props.alt}
+            title={props.title}
+            className={classType}>
             {props.children}
         </a>
     )

@@ -22,14 +22,13 @@ const CarouselItem = (props)=>  {
     let txtStorage = null
 
     let mainClass = classes.CarouselItem;
-
+    let colorButton = null
     switch (props.plan.name) {
         case "Plano P":
             iconPlan = icon_plan_p
             txtNumSites = "Para 1 site"
             txtStorage = "100 GB"
-            mainClass += ' ' + classes.Active 
-
+            mainClass += (props.cardIndex === props.activeCard) ?  ' ' + classes.Focus : '' 
             break;
 
         case "Plano M":
@@ -37,15 +36,15 @@ const CarouselItem = (props)=>  {
             txtNumSites = "Sites Ilimitados"
             txtStorage = "100 GB"
             mainClass += ' ' + classes.Active 
-
+            colorButton = 'orange'
+            mainClass += (props.cardIndex === props.activeCard) ?  ' ' + classes.Focus : '' 
             break;
         
         case "Plano Turbo":
             iconPlan = icon_plan_turbo
             txtNumSites = "Sites Ilimitados"
             txtStorage = "150 GB"
-            mainClass += ' ' + classes.Active 
-
+            mainClass += (props.cardIndex === props.activeCard) ?  ' ' + classes.Focus : '' 
             break;
 
         default:
@@ -87,17 +86,23 @@ const CarouselItem = (props)=>  {
                 <h1>{props.plan.name}</h1>
             </header>
             
-            <section>
+            <section className={classes.ValoresArea}>
                 <p><span className={classes.OldValue}>R&#36; {priceOrder}</span> <strong>R&#36; {priceWithDiscount}</strong></p>
-                <p>equivalente a</p>
-                <p>R&#36;<span>{pricePerMonth}</span>/mês*</p>
+                <p>equivalente a</p>    
+                <p className={classes.PerMonth}>R&#36; <span>{pricePerMonth}</span>/mês*</p>
                 <RoundButton
                     full={true}
+                    color={colorButton}
                     alt="Contrate Agora"
                     title="Contrate Agora">
                     Contrate Agora
                 </RoundButton>
-                <p><strong>1 ano de Domínio Grátis</strong> <img src={icon_info}/></p>
+                <p>
+                    <strong>1 ano de Domínio Grátis</strong>
+                    <button className={classes.BtnInfo} alt="Informações sobre o um ano de domínio grátis">
+                        <img src={icon_info} alt=" "/>
+                    </button>
+                </p>
                 <p>
                     economize R&#36; {totalSaved}
                     <RoundLabel
@@ -109,10 +114,17 @@ const CarouselItem = (props)=>  {
             </section>
             
             <section className={classes.InfoArea}>
-                <p>{txtNumSites}</p>
+                <p><span>{txtNumSites}</span></p>
                 <p><strong>{txtStorage}</strong> de Armazenamento</p>
-                <p>Contas de E-mail Ilimitadas</p>
-                <p>Criador de Sites <strong>Grátis</strong></p>
+                <p><span>Contas de E-mail <strong>Ilimitadas</strong></span></p>
+                <p>
+                    Criador de Sites 
+                    <a href="/"
+                        alt="Saiba mais sobre o Criador de Site"
+                        title="Saiba mais sobre o Criador de Site">
+                            <strong>Grátis</strong>
+                        </a>
+                    </p>
                 <p>Certificado SSL <strong>Grátis</strong> (https)</p>
             </section>
         </div>

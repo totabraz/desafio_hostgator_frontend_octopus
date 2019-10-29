@@ -26,12 +26,10 @@ const PeriodSelector = (props) => {
     
     return (
         <div id="plans" className={classes.PeriodSelector}>
-            <div className={classes.container}>
                 <p>Quero pagar a cada:</p>
                 <div className={classes.BtnsSelector}>
                     {buttons}
                 </div>
-            </div>
         </div>
     )
 }

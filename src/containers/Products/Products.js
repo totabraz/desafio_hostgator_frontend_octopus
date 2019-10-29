@@ -11,6 +11,8 @@ class Products extends Component {
             plans: [],
             selectedPlanID: null,
             activePeriod: '3anos',
+            carouselActivedCard:0,
+            carouselNumOfCard:3,
         }
     }
     
@@ -28,9 +30,26 @@ class Products extends Component {
             })
             .catch(error => {
 
-            })
+        })
     }
 
+   
+    nextCardHandler = () => {
+        let correction = 1
+        if (window.innerWidth >= 700) correction = 2
+        if(this.state.carouselActivedCard < (this.state.carouselNumOfCard  - correction)){
+            const nextActiveCard = this.state.carouselActivedCard +  1;
+            this.setState({carouselActivedCard:nextActiveCard})
+        }
+    }
+
+    prevCardHandler = () => {
+        if((this.state.carouselActivedCard > 0) && (this.state.carouselActivedCard < this.state.carouselNumOfCard )){
+            const nextActiveCard = this.state.carouselActivedCard - 1;
+            this.setState({carouselActivedCard:nextActiveCard})
+        }
+    }
+    
     render() {
         return(
             <div>
@@ -39,6 +58,9 @@ class Products extends Component {
                     activePeriod={this.state.activePeriod}
                     setPeriod={this.selectedPeriodHandler}/>
                 <Carousel 
+                    carouselActivedCard={this.state.carouselActivedCard}
+                    clickBtnLeft={this.prevCardHandler}
+                    clickBtnRight={this.nextCardHandler}
                     activePeriod={this.state.activePeriod}
                     plans={this.state.plans}/>
             </div>

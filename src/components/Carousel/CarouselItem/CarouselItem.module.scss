@@ -14,12 +14,44 @@
     border: 1px solid $bluel;
     opacity: 1;
 
-    .InfoArea {
-        text-align: left;
+
+    &.Active {
+
+        &:before,
+        &:after {
+            margin: 0 auto;
+            width: 321px;
+            background-color: $orange;
+            display: block;
+            position: absolute;
+            margin-left: 5px;
+            content: " ";
+
+        }
+
+        &:before {
+            border-radius: 5px 5px 0 0;
+            top: -10px;
+            height: 11px;
+        }
+
+        &:after {
+            border-radius: 0 0 5px 5px;
+            bottom: -4px;
+            height: 5px;
+        }
     }
 
-    .OldValue {
-        text-decoration: line-through;
+    // Cards' Sections
+    header {
+        h1 {
+            font-size: 26px;
+            top: 712px;
+            color: $blued;
+            text-align: center;
+            letter-spacing: 0;
+            font-weight: Bold;
+        }
     }
 
     header,
@@ -32,4 +64,71 @@
     section+section {
         border-top: 1px solid $bluel;
     }
+
+    .ValoresArea {
+        &>a {
+            margin: 20px auto;
+        }
+
+        p {
+            margin: 5px auto;
+        }
+    }
+
+    .InfoArea {
+        text-align: left;
+
+        span {
+            border-bottom: 1px dashed $bluel;
+
+        }
+
+        a {
+            margin-left: 5px;
+            color: $black;
+        }
+    }
+
+
+
+    //  Styles txts values
+    .OldValue {
+        text-decoration: line-through;
+    }
+
+    .PerMonth {
+        font-size: 20px;
+        color: $blued;
+
+        span {
+            font-size: 30px;
+            font-weight: bold;
+            ;
+        }
+    }
+
+    // Btns
+    .BtnInfo {
+        margin-left: 5px;
+        padding: 0;
+        border-radius: 100%;
+        box-shadow: none;
+        border: 0;
+        height: 20px;
+        width: 20px;
+
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: -3px;
+        }
+    }
+
+
 }

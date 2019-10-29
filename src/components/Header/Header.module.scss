@@ -96,17 +96,12 @@
         height: auto;
     }
 
-}
-
-
-@media only screen and (min-width: 768px) {
-    .Header {
-
+    @media only screen and (min-width: 768px) {
         .Person,
         .CoffeeTable {
             display: inline-block;
         }
-
+    
         .BtnDown {
             margin-top: 1vh;
         }
@@ -114,23 +109,35 @@
             max-width: 600px;
             margin: 0 auto;
         }
+
+        .Person{
+            right: -400px;            
+        }
+    
+        .CoffeeTable{
+            left: -450px;            
+        }
     }
-}
-
-@media only screen and (min-width: 992px) {
-    .Header {
-
+    
+    
+    @media only screen and (min-width: 992px) {
         .BtnDown {
             margin-top: 2vh;
         }
+        .Person{
+        right: -475px;            
+        }
+        .CoffeeTable{
+        left: -525px;            
+        }
+    
     }
-}
-
-@media only screen and (min-width: 1200px) {
-    .Header {
-
+    
+    @media only screen and (min-width: 1200px) {
         .BtnDown {
             margin-top: 4vh;
         }
+    
     }
 }
+
