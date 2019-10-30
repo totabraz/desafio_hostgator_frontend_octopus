@@ -35,6 +35,7 @@ class Products extends Component {
                 const plans = Object.keys(response.data.shared.products).map( planID => { 
                     return response.data.shared.products[planID]
                 })
+                console.log(plans)
                 this.setState({plans: plans})
             })
             .catch(error => {

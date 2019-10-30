@@ -12,6 +12,7 @@ const Carousel = (props) => {
         (period, index) => {
             return(
                 <CarouselItem
+                    planID={props.plans[period].id}
                     cardIndex={index}  
                     activeCard={props.carouselActivedCard} 
                     key={props.plans[period].id}

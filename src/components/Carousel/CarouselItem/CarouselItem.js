@@ -28,8 +28,9 @@ const CarouselItem = (props)=>  {
     let colorButton = null
 
 
-    let urlCodigoProduto, urlBillingCycle = null
+    let urlBillingCycle = null
     const promocode = "PROMOHG40"
+    const urlCodigoProduto = props.planID
     switch (props.plan.name) {
         case "Plano P":
             iconPlan = icon_plan_p
@@ -64,7 +65,6 @@ const CarouselItem = (props)=>  {
             priceWithDiscount = priceOrder * ((100 - discount)/100)
             totalSaved = priceOrder - priceWithDiscount
             pricePerMonth = priceOrder / thisCycle.annually.months
-            urlCodigoProduto = "1ano"
             urlBillingCycle = "annually"
             break
 
@@ -73,7 +73,6 @@ const CarouselItem = (props)=>  {
             priceWithDiscount = priceOrder * ((100 - discount)/100)
             totalSaved = priceOrder - priceWithDiscount
             pricePerMonth = priceOrder / thisCycle.monthly.months
-            urlCodigoProduto = "1mes"
             urlBillingCycle = "monthly"
             break
             
@@ -82,7 +81,6 @@ const CarouselItem = (props)=>  {
             priceWithDiscount = priceOrder * ((100 - discount)/100)
             totalSaved = priceOrder - priceWithDiscount
             pricePerMonth = priceOrder / thisCycle.triennially.months
-            urlCodigoProduto = "3anos"
             urlBillingCycle = "triennially"
             break
         
