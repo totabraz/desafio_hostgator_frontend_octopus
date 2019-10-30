@@ -12,6 +12,7 @@ Applying test to Hostgator Latam.
 - Sass
 - Node.js (npm)
 
+
 **How to Run**
 
 To run this project, I've used npm.
@@ -50,6 +51,7 @@ Teste da Hostgator Latam.
 - Sass
 - Node.js (npm)
 
+
 **Como rodar**
 
 Para rodar este projeto, eu  usei npm.
@@ -59,7 +61,6 @@ Você pode baixar em: https://nodejs.org/en/download/
 
 - você pode usar o comando 'cd + nome_da_pasta' para abrir e 'ls' para listar arquivos neste diretório
 - Ex.: #../../../desafio_hostgator_frontend_octopus
-
 
 **Segundo passo:** Instalar as dependêncies, rode o comando: 
 npm install
