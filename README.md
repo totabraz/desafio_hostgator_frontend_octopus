@@ -29,7 +29,7 @@ E.g.: #../../../desafio_hostgator_frontend_octopus
 npm install
 
 
-Third step: Start the server, run the command:
+**Third step:** Start the server, run the command:
 npm start
 
 
