@@ -13,7 +13,7 @@ Applying test to Hostgator Latam.
 - Node.js (npm)
 
 
-**How to Run**
+**How to run**
 
 To run this project, I've used npm.
 You  can download it on: https://nodejs.org/en/download/
