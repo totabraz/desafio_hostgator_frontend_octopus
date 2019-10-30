@@ -5,10 +5,9 @@ import btn_arrow_down from '../../assets/imgs/btn_arrow_down.svg'
 import atendente from '../../assets/imgs/atendente.svg'
 import armario_mesa from '../../assets/imgs/armario_mesa.svg'
 
-const Header = () => {
+const Header = (props) => {
     return (
-        <header className={classes.Header}>
-            
+        <header className={classes.Header}>            
             <div className={classes.InnerHader}>
                 <section className={classes.Infos}>
                     <img src={atendente} className={classes.Person} alt=" " arial-hidden="true"/>
@@ -35,7 +34,7 @@ const Header = () => {
                 <svg viewBox="0 0 500 150" preserveAspectRatio="none">
                     <path d="M0.00,00.00 C250.00,20 250.00,20 500.00,00.00 L500.00,0.00 L0.00,0.00 Z" className={classes.Path}></path>
                 </svg>
-                <a href="#plans" className={classes.BtnDown} title="Go to Plans" alt="Go to Plans">
+                <a href="#plans" className={classes.BtnDown} title="Go to Plans" alt="Go to Plans" onClick={props.btnDown}>
                     <img src={btn_arrow_down} alt=" " arial-hidden="true"/>
                 </a>
             </div>

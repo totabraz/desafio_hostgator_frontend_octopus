@@ -3,8 +3,8 @@ import axios from '../../axios'
 import Header from '../../components/Header/Header';
 import PeriodSelector from '../../components/PeriodSelector/PeriodSelector';
 import Carousel from '../../components/Carousel/Carousel';
-
 class Products extends Component {
+
     constructor(props){
         super(props);
         this.state = {
@@ -29,11 +29,9 @@ class Products extends Component {
                 this.setState({plans: plans})
             })
             .catch(error => {
-
         })
     }
 
-   
     nextCardHandler = () => {
         let correction = 1
         if (window.innerWidth >= 600) correction = 2
@@ -50,10 +48,21 @@ class Products extends Component {
         }
     }
     
+    scrollToProductsHandler = (evet) => {
+        evet.preventDefault()
+        var Scroll = require('react-scroll');
+        var scroll = Scroll.animateScroll;
+        scroll.scrollTo( 425,{
+            duration: 500,
+            delay: 100,
+            smooth: true,
+          })
+    }
+
     render() {
         return(
             <div>
-                <Header/>
+                <Header btnDown={this.scrollToProductsHandler}/>
                 <PeriodSelector 
                     activePeriod={this.state.activePeriod}
                     setPeriod={this.selectedPeriodHandler}/>
