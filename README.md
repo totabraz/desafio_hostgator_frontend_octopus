@@ -1,8 +1,8 @@
 # Hostgator test - Octopus
 
 
-[EN]
-
+## [EN]
+----
 Applying test to Hostgator Latam.
 
 ## Technologies:
@@ -33,8 +33,9 @@ Because this section, I was confused about if I could use some animations libs.
 So I did both, I've used Libs and create a small animation using css, it is at Carousel.module.scss, just a custom fadeIn.
 
 ---
-[PT_BR]
 
+## [PT_BR]
+----
 Teste da Hostgator Latam.
 
 ## Tecnologías utilizadas:
