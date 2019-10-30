@@ -1,11 +1,11 @@
 # Hostgator test - Octopus
 
----
+
 [EN]
 
 Applying test to Hostgator Latam.
 
-## Thecnologies:
+## Technologies:
 
 **[Front-end]**
 - React JS
@@ -23,7 +23,7 @@ E.g.: #../../../desafio_hostgator_frontend_octopus
 Second step: install dependencies, run the command: 
 npm install
 
-Therd step: Start the server, run the command:
+Third step: Start the server, run the command:
 npm start
 
 
@@ -37,7 +37,7 @@ So I did both, I've used Libs and create a small animation using css, it is at C
 
 Teste da Hostgator Latam.
 
-## Tecnologias utilizadas:
+## Tecnologías utilizadas:
 
 **[Front-end]**
 - React JS
@@ -46,10 +46,10 @@ Teste da Hostgator Latam.
 
 **Como rodar**
 Para rodar este projeto, eu  usei npm.
-Você pdoe baixar em: https://nodejs.org/en/download/
+Você pode baixar em: https://nodejs.org/en/download/
 
 Primeiro passo: usando o terminal/cmd/prompt, vá até a pasta do projeto.
-- você pode usar o comando 'cd + nomde_da_pasta' para abrir e 'ls' para listar arquivos neste diretorio
+- você pode usar o comando 'cd + nome_da_pasta' para abrir e 'ls' para listar arquivos neste diretório
 Ex.: #../../../desafio_hostgator_frontend_octopus
 
 Segundo passo: Instalar as dependêncies, rode o comando: 
@@ -61,5 +61,6 @@ npm start
 **Observações**
 “- Utilizar biblioteca/framework de interface do usuário (Material UI, Bootstrap ...). Crie o HTML e CSS do zero;”
 Por causa desta sessão, fiquei confuso se eu poderia usar bibliotecas de animações.
-Então eu utilizei as duas, bibliotecas e também criei  uma naimação via css, localizada em Carousel.module.scss, apenas um fadeIn customizado.
+Então eu utilizei as duas, bibliotecas e também criei  uma animação via css, localizada em Carousel.module.scss, apenas um fadeIn customizado.
+
 
