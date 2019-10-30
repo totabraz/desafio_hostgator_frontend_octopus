@@ -2,12 +2,15 @@ import React from 'react';
 import classes from './CarouselItem.module.scss';
 import RoundButton from '../../RoundButton/RoundButton';
 import RoundLabel from '../../RoundLabel/RoundLabel';
+import styled, { keyframes } from 'styled-components';
+
 
 // Plans icons
 import icon_plan_p from '../../../assets/imgs/icon_plan_p.svg'
 import icon_plan_m from '../../../assets/imgs/icon_plan_m.svg'
 import icon_plan_turbo from '../../../assets/imgs/icon_plan_turbo.svg'
 import icon_info from '../../../assets/imgs/icon_info.svg'
+
 
 const CarouselItem = (props)=>  {
     const thisCycle = props.plan.cycle
@@ -23,6 +26,7 @@ const CarouselItem = (props)=>  {
 
     let mainClass = classes.CarouselItem;
     let colorButton = null
+
     switch (props.plan.name) {
         case "Plano P":
             iconPlan = icon_plan_p

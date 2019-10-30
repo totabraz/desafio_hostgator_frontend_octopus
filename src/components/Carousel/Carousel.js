@@ -64,7 +64,7 @@ const Carousel = (props) => {
                     </button>
             </div>
             <div className={classes.InfoArea}>
-            <a href="/" alt="Acessar página" >*Confira as condições da promoção</a>
+              <a href="/" alt="Acessar página" >*Confira as condições da promoção</a>
             </div>
 
         </div>

@@ -3,6 +3,15 @@ import axios from '../../axios'
 import Header from '../../components/Header/Header';
 import PeriodSelector from '../../components/PeriodSelector/PeriodSelector';
 import Carousel from '../../components/Carousel/Carousel';
+import { slideInDown, slideInUp } from 'react-animations'
+import styled, {keyframes} from 'styled-components'
+
+const DivSlideUp = styled.div`
+animation: 2s ${keyframes`${slideInUp}`};
+`;
+const DivSlideDown = styled.div`
+animation: 1.5s ${keyframes`${slideInDown}`};
+`;
 class Products extends Component {
 
     constructor(props){
@@ -63,15 +72,20 @@ class Products extends Component {
         return(
             <div>
                 <Header btnDown={this.scrollToProductsHandler}/>
-                <PeriodSelector 
-                    activePeriod={this.state.activePeriod}
-                    setPeriod={this.selectedPeriodHandler}/>
-                <Carousel 
-                    carouselActivedCard={this.state.carouselActivedCard}
-                    clickBtnLeft={this.prevCardHandler}
-                    clickBtnRight={this.nextCardHandler}
-                    activePeriod={this.state.activePeriod}
-                    plans={this.state.plans}/>
+                
+                <DivSlideDown>
+                    <PeriodSelector 
+                        activePeriod={this.state.activePeriod}
+                        setPeriod={this.selectedPeriodHandler}/>
+                </DivSlideDown>
+                <DivSlideUp>
+                    <Carousel 
+                        carouselActivedCard={this.state.carouselActivedCard}
+                        clickBtnLeft={this.prevCardHandler}
+                        clickBtnRight={this.nextCardHandler}
+                        activePeriod={this.state.activePeriod}
+                        plans={this.state.plans}/>
+                </DivSlideUp>
             </div>
         )
     }
