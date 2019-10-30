@@ -19,8 +19,9 @@ const RoundButton = (props) => {
             classType += classes.Blue
             break;
     }
+    
     return(
-        <a href={(props.link)? props.link : "#"} alt={props.alt}
+        <a href={props.embedLink} alt={props.alt}
             title={props.title}
             className={classType}>
             {props.children}

@@ -27,6 +27,9 @@ const CarouselItem = (props)=>  {
     let mainClass = classes.CarouselItem;
     let colorButton = null
 
+
+    let urlCodigoProduto, urlBillingCycle = null
+    const promocode = "PROMOHG40"
     switch (props.plan.name) {
         case "Plano P":
             iconPlan = icon_plan_p
@@ -61,13 +64,17 @@ const CarouselItem = (props)=>  {
             priceWithDiscount = priceOrder * ((100 - discount)/100)
             totalSaved = priceOrder - priceWithDiscount
             pricePerMonth = priceOrder / thisCycle.annually.months
-            break;
+            urlCodigoProduto = "1ano"
+            urlBillingCycle = "annually"
+            break
 
         case "1mes":
             priceOrder = thisCycle.monthly.priceOrder
             priceWithDiscount = priceOrder * ((100 - discount)/100)
             totalSaved = priceOrder - priceWithDiscount
             pricePerMonth = priceOrder / thisCycle.monthly.months
+            urlCodigoProduto = "1mes"
+            urlBillingCycle = "monthly"
             break
             
         case "3anos":
@@ -75,7 +82,9 @@ const CarouselItem = (props)=>  {
             priceWithDiscount = priceOrder * ((100 - discount)/100)
             totalSaved = priceOrder - priceWithDiscount
             pricePerMonth = priceOrder / thisCycle.triennially.months
-            break;
+            urlCodigoProduto = "3anos"
+            urlBillingCycle = "triennially"
+            break
         
         default:
             break;
@@ -96,6 +105,13 @@ const CarouselItem = (props)=>  {
         pricePerMonth = pricePerMonth.toFixed(2)
         pricePerMonth = pricePerMonth.replace('.',',')
     }
+
+    // , (?a=add&pid=<codigo-produto>&billingcycle=<triennially|annually|monthly>&promocode=PROMOHG40
+    // - Ao clicar em contrate agora, a URL deverá conter o 
+    // código do produto +
+    // o ciclo do produto +
+    //  o cupom PROMOHG40, 
+    const urlEmbed = '?a=add&pid='+urlCodigoProduto+'&billingcycle='+ urlBillingCycle +'&promocode='+promocode
     
     return ( 
         <div className={mainClass}>
@@ -110,6 +126,7 @@ const CarouselItem = (props)=>  {
                 <p className={classes.XsText}>equivalente a</p>    
                 <p className={classes.PerMonth}>R&#36; <span>{pricePerMonth}</span>/mês*</p>
                 <RoundButton
+                    embedLink={urlEmbed}
                     full={true}
                     color={colorButton}
                     alt="Contrate Agora"
