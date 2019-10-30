@@ -11,10 +11,10 @@ import icon_info from '../../../assets/imgs/icon_info.svg'
 
 const CarouselItem = (props)=>  {
     const thisCycle = props.plan.cycle
-    let priceOrder 
-    let priceWithDiscount 
-    let totalSaved 
-    let pricePerMonth 
+    let priceOrder = null
+    let priceWithDiscount = null
+    let totalSaved = null
+    let pricePerMonth = null
     let discount = 40 
     let iconPlan = null
 
@@ -54,29 +54,44 @@ const CarouselItem = (props)=>  {
     switch(props.activePeriod){
         case "1ano":
             priceOrder = thisCycle.annually.priceOrder;
-            priceWithDiscount = +(priceOrder * ((100 - discount)/100)).toFixed(2)
-            totalSaved = +(priceOrder - priceWithDiscount).toFixed(2)
-            pricePerMonth = +(priceOrder / thisCycle.annually.months).toFixed(2)
+            priceWithDiscount = priceOrder * ((100 - discount)/100)
+            totalSaved = priceOrder - priceWithDiscount
+            pricePerMonth = priceOrder / thisCycle.annually.months
             break;
 
         case "1mes":
             priceOrder = thisCycle.monthly.priceOrder
-            priceWithDiscount = +(priceOrder * ((100 - discount)/100)).toFixed(2)
-            totalSaved = +(priceOrder - priceWithDiscount).toFixed(2)
-            pricePerMonth = +(priceOrder / thisCycle.monthly.months).toFixed(2)
+            priceWithDiscount = priceOrder * ((100 - discount)/100)
+            totalSaved = priceOrder - priceWithDiscount
+            pricePerMonth = priceOrder / thisCycle.monthly.months
             break
             
         case "3anos":
             priceOrder = thisCycle.triennially.priceOrder
-            priceWithDiscount = +(priceOrder * ((100 - discount)/100)).toFixed(2)
-            totalSaved = +(priceOrder - priceWithDiscount).toFixed(2)
-            pricePerMonth = +(priceOrder / thisCycle.triennially.months).toFixed(2)
+            priceWithDiscount = priceOrder * ((100 - discount)/100)
+            totalSaved = priceOrder - priceWithDiscount
+            pricePerMonth = priceOrder / thisCycle.triennially.months
             break;
         
         default:
             break;
     }
-
+    
+    if (priceOrder) {
+        priceOrder = priceOrder.replace('.',',')
+    }
+    if (priceWithDiscount) {
+        priceWithDiscount = priceWithDiscount.toFixed(2)
+        priceWithDiscount = priceWithDiscount.replace('.',',')
+    }
+    if (totalSaved) {
+        totalSaved = totalSaved.toFixed(2)
+        totalSaved = totalSaved.replace('.',',')
+    }
+    if (pricePerMonth) {
+        pricePerMonth = pricePerMonth.toFixed(2)
+        pricePerMonth = pricePerMonth.replace('.',',')
+    }
     
     return ( 
         <div className={mainClass}>
@@ -87,8 +102,8 @@ const CarouselItem = (props)=>  {
             </header>
             
             <section className={classes.ValoresArea}>
-                <p><span className={classes.OldValue}>R&#36; {priceOrder}</span> <strong>R&#36; {priceWithDiscount}</strong></p>
-                <p>equivalente a</p>    
+                <p className={classes.XsText}><span className={classes.OldValue}>R&#36; {priceOrder}</span> <strong>R&#36; {priceWithDiscount}</strong></p>
+                <p className={classes.XsText}>equivalente a</p>    
                 <p className={classes.PerMonth}>R&#36; <span>{pricePerMonth}</span>/mês*</p>
                 <RoundButton
                     full={true}
@@ -97,13 +112,13 @@ const CarouselItem = (props)=>  {
                     title="Contrate Agora">
                     Contrate Agora
                 </RoundButton>
-                <p>
+                <p  className={classes.SmText}>
                     <strong>1 ano de Domínio Grátis</strong>
                     <button className={classes.BtnInfo} alt="Informações sobre o um ano de domínio grátis">
                         <img src={icon_info} alt=" "/>
                     </button>
                 </p>
-                <p>
+                <p className={classes.DiscontTxt}>
                     economize R&#36; {totalSaved}
                     <RoundLabel
                         type="green"

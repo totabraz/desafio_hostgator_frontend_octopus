@@ -2,31 +2,41 @@
 @import '../../../assets/shared_sass/gird.scss';
 
 
-.CarouselItem+.CarouselItem {
-    margin-left: 15px;
-}
+// .CarouselItem+.CarouselItem {
+// }
 
 .CarouselItem {
+    margin-left: 15px;
     display: inline-block;
-    width: 329px;
+    width: 290px;
     background: #FFFFFF 0% 0%;
     border-radius: 5px;
     border: 1px solid $bluel;
     opacity: 1;
 
+    @media only screen and (min-width: 768px) {
+        width: 320px;
+    }
+
+    &:last-of-type {
+        margin-right: 15px;
+    }
 
     &.Active {
 
         &:before,
         &:after {
             margin: 0 auto;
-            width: 321px;
+            width: 275px;
             background-color: $orange;
             display: block;
             position: absolute;
             margin-left: 5px;
             content: " ";
 
+            @media only screen and (min-width: 768px) {
+                width: 310px;
+            }
         }
 
         &:before {
@@ -57,7 +67,7 @@
     header,
     section {
         text-align: center;
-        padding: 25px;
+        padding: 20px 14px
     }
 
     header+section,
@@ -88,8 +98,6 @@
             color: $black;
         }
     }
-
-
 
     //  Styles txts values
     .OldValue {
@@ -130,5 +138,17 @@
         }
     }
 
+    .DiscontTxt {
+        font-size: 14px;
+        color: $bluen;
+    }
+
+    .SmText {
+        font-size: 15px;
+    }
+
+    .XsText {
+        font-size: 13px;
+    }
 
 }

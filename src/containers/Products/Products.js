@@ -36,7 +36,7 @@ class Products extends Component {
    
     nextCardHandler = () => {
         let correction = 1
-        if (window.innerWidth >= 700) correction = 2
+        if (window.innerWidth >= 600) correction = 2
         if(this.state.carouselActivedCard < (this.state.carouselNumOfCard  - correction)){
             const nextActiveCard = this.state.carouselActivedCard +  1;
             this.setState({carouselActivedCard:nextActiveCard})
